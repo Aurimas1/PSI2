@@ -1,0 +1,23 @@
+<form>
+  <div class="row">
+    <mat-form-field class="form-input-width">
+      <input matInput placeholder="Pavadinimas" [formControl]="emptyFormConstrol" [errorStateMatcher]="matcher">
+      <mat-error *ngIf="emptyFormConstrol.hasError('required')">
+        Pavadinimo laukas negali būti tuščias
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div class="row">
+    <mat-form-field class="form-input-width">
+      <input matInput placeholder="Aprašymas">
+    </mat-form-field>
+  </div>
+  <div class="row">
+    <mat-form-field class="form-input-width">
+      <input matInput placeholder="Žmonių skaičius">
+    </mat-form-field>
+  </div>
+  <div class="row">
+    <button mat-raised-button color="primary" (click)="showSuccess()">Išsaugoti</button>
+  </div>
+</form>

@@ -1,0 +1,18 @@
+<form>
+  <div class="row">
+    <mat-form-field class="form-input-width">
+      <input matInput placeholder="Vartotojo vardas" [formControl]="emptyFormConstrol" [errorStateMatcher]="matcher">
+      <mat-error *ngIf="emptyFormConstrol.hasError('required')">
+        Vartotojo vardo laukelis yra privalomas
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div class="row">
+    <mat-form-field class="form-input-width">
+      <input type="password" matInput placeholder="Slaptažodis">
+    </mat-form-field>
+  </div>
+  <div class="row">
+    <button mat-raised-button color="primary" (click)="login()">Prisijungti</button>
+  </div>
+</form>

@@ -1,0 +1,19 @@
+<ul>
+  <li *ngIf="auth.username">
+    <a>Labas {{auth.username}}!</a>
+  </li>
+  <ng-container [ngSwitch]="auth.isLogedin()">
+    <li *ngSwitchCase="true">
+      <a [routerLink]="['/profile']">Peržiūrėti profilį</a>
+    </li>
+    <li style="float:right">
+      <a *ngSwitchCase="false" [routerLink]="['/login']">Prisijungti</a>
+      <a *ngSwitchCase="true" (click)="auth.logout()">Atsijungti</a>
+    </li>
+  </ng-container>
+  <ng-container [ngSwitch]="auth.role">
+    <li>
+      <a *ngSwitchCase="'admin'" [routerLink]="['/admin-menu']">Administratoriaus meniu</a>
+    </li>
+  </ng-container>
+</ul>

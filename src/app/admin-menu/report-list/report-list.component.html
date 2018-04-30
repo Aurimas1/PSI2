@@ -1,0 +1,9 @@
+<div class="empty"></div>
+<button mat-raised-button disabled class="centras" [routerLink]="['./report-list']">Pranešto turinio sąrašas</button>
+<div class="empty"></div>
+<table>
+  <tr *ngFor="let element of fakeData" (click)="openReportDialog(element)">
+    <td>{{element.date}}</td>
+    <td>{{element.user}}</td>
+  </tr>
+</table>

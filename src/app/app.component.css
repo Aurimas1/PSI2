@@ -1,0 +1,11 @@
+div.app-center {
+    margin: 0 auto;
+}
+
+div.app-center, .input-max-width {
+    max-width: 450px;
+}
+
+.input-max-width {
+    width: 100%; 
+}
