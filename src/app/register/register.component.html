@@ -16,11 +16,14 @@
     </mat-form-field>
   </div>
   <div class="row">
-    <button mat-raised-button color="primary" (click)="login()">Prisijungti</button>
+    <mat-form-field class="form-input-width">
+      <input matInput placeholder="Vardas" [formControl]="name" [errorStateMatcher]="matcher">
+      <mat-error *ngIf="name.hasError('required')">
+        Vartotojo slaptažodžio laukelis yra privalomas
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div class="row">
+    <button mat-raised-button color="primary" (click)="register()">Prisiregistruoti</button>
   </div>
 </form>
-
-<div class="empty row">
-  <p>Neturi paskyros:</p>
-  <button [routerLink]="['/register']">Prisiregistruok</button>
-</div>

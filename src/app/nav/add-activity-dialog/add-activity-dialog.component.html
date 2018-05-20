@@ -1,0 +1,41 @@
+<p>Veikla</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6 com-sm-6 com-md-6 col-lg-6">
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Veiklos pavadinimas">
+        </mat-form-field>
+      </div><div>
+        <mat-form-field>
+          <input matInput placeholder="Aprašymas">
+        </mat-form-field>
+      </div><div>
+        <mat-form-field>
+          <input matInput placeholder="Vieta">
+        </mat-form-field>
+      </div>  
+    </div>
+    <div class="col-xs-6 com-sm-6 com-md-6 col-lg-6">
+      <div>
+      Pradžia: <mat-form-field>
+        <input matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      </div><div>
+      Pabaiga: <mat-form-field>
+        <input matInput [matDatepicker]="picker2">
+        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+      </mat-form-field>
+      </div><div>
+      Draugai:<br>
+      <textarea placeholder="Įrašykite vardą ir pavardę"></textarea>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <button mat-raised-button color="primary" class="center-activity-button">Baigti apklausą</button>
+  </div>
+</div>

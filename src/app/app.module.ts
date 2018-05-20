@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireStorageModule } from 'angularfire2/storage';
 
 import { ToastModule } from 'ng2-toastr/ng2-toastr';
 
@@ -24,10 +25,18 @@ import { LoginComponent } from './login/login.component';
 import { AuthService } from './login/auth.service';
 import { ProfileComponent } from './profile/profile.component';
 import { AdminMenuComponent } from './admin-menu/admin-menu.component';
-import { UserService } from './admin-menu/user.service';
-import { UserListComponent } from './admin-menu/user-list/user-list.component';
 import { ReportListComponent } from './admin-menu/report-list/report-list.component';
 import { ReportDialogComponent } from './admin-menu/report-list/report-dialog/report-dialog.component';
+import { SurveyComponent } from './survey/survey.component';
+
+import { ChartsModule } from 'ng2-charts';
+import { AddActivityDialogComponent } from './nav/add-activity-dialog/add-activity-dialog.component';
+import { CreateDiscountComponent } from './create-discount/create-discount.component';
+import { DiscountDetailComponent } from './discount-detail/discount-detail.component';
+import { AdBuyComponent } from './ad-buy/ad-buy.component';
+import { ReportListService } from './admin-menu/report-list/report-list.service';
+import { RegisterComponent } from './register/register.component';
+import { SurveyService } from './survey/survey.service';
 
 
 @NgModule({
@@ -40,9 +49,14 @@ import { ReportDialogComponent } from './admin-menu/report-list/report-dialog/re
     LoginComponent,
     ProfileComponent,
     AdminMenuComponent,
-    UserListComponent,
     ReportListComponent,
     ReportDialogComponent,
+    SurveyComponent,
+    AddActivityDialogComponent,
+    CreateDiscountComponent,
+    DiscountDetailComponent,
+    AdBuyComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,10 +68,12 @@ import { ReportDialogComponent } from './admin-menu/report-list/report-dialog/re
     ReactiveFormsModule,
     SuperModule,
     BrowserAnimationsModule,
-    ToastModule.forRoot()
+    ToastModule.forRoot(),
+    ChartsModule,
+    AngularFireStorageModule
   ],
   bootstrap: [AppComponent],
-  providers: [ActivityService, AuthService, UserService],
-  entryComponents: [ReportDialogComponent]
+  providers: [ActivityService, AuthService, ReportListService, SurveyService],
+  entryComponents: [ReportDialogComponent, AddActivityDialogComponent]
 })
 export class AppModule { }

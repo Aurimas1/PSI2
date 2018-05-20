@@ -1,0 +1,26 @@
+<div class="row">
+  <p>
+    Pirkimas leidžia partnerio įmonei patekto į veiklos vietos pasirinkimo pirmenybės sąrašą. Parteneriai, esantys pirmenybės sąraše
+    turi vienodas galimybes būti rodomi penkiose viršutinėse vietose. Tokiu būdu daugiau vartotojų pamato Jūsų įmonę ir renkasi
+    Jūsų paslaugas.
+  </p>
+</div>
+<div class="row">
+  <div class="col-xs-6 com-sm-6 com-md-6 col-lg-6">
+    <p>Kiek kartų norite būti parodytas TOP 5?</p>
+    <mat-radio-group class="example-radio-group" [(ngModel)]="selectedOption">
+      <mat-radio-button class="example-radio-button" *ngFor="let option of options" [value]="option.cost">
+        {{option.count}} ({{option.cost}}€)
+      </mat-radio-button>
+    </mat-radio-group>
+  </div>
+  <div class="col-xs-6 com-sm-6 com-md-6 col-lg-6">
+    <p>Šiuo metu {{orderCount}} partnerių pretenduoja į TOP5 pozicijas. Su kiekvienu veiklos sukūrimu
+      Jūsų galimybė patekti į TOP5 yra lygi {{probability}}%.
+    </p>
+  </div>
+</div>
+
+<div class="row empty">
+  <button>Sumokėti</button>
+</div>

@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="col-xs-6 com-sm-6 com-md-6 col-lg-6">
+      <mat-form-field>
+        <input matInput placeholder="Įmonės pavadinimas">
+      </mat-form-field>
+    </div>
+    <div class="col-xs-6 com-sm-6 com-md-6 col-lg-6">
+      <p><u>Nuolaidos taikymo sritis:</u></p>
+      <mat-checkbox>Visoms paslaugoms/prekėms</mat-checkbox><br>
+      <mat-checkbox></mat-checkbox>
+      <textarea placeholder="Vieta komentarui"></textarea>
+    </div>
+    <div class="row">
+      <div class="col-xs-6 com-sm-6 com-md-6 col-lg-6">
+        <mat-form-field>
+          <input matInput placeholder="Nuolaidos dydis procentais">
+        </mat-form-field>
+      </div>
+      <div class="col-xs-6 com-sm-6 com-md-6 col-lg-6">
+        <p><u>Nuolaidos trukmė:</u></p>
+        Pradžia: <mat-form-field>
+            <input matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field><br>
+          Pabaiga: <mat-form-field>
+            <input matInput [matDatepicker]="picker2">
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+          </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <mat-form-field>
+        <input matInput placeholder="Nuolaidos kodas">
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <button mat-raised-button color="primary" class="center-discount-button">Patvirtinti</button>
+    </div>
+</div>
+
+
+
+
+<div class="row">
+    <div class="col-xs-6 com-sm-6 com-md-6 col-lg-6">
+      
+    </div>
+</div>

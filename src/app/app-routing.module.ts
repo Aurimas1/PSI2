@@ -6,8 +6,12 @@ import { ActivityListComponent } from './activity-list/activity-list.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AdminMenuComponent } from './admin-menu/admin-menu.component';
-import { UserListComponent } from './admin-menu/user-list/user-list.component';
 import { ReportListComponent } from './admin-menu/report-list/report-list.component';
+import { SurveyComponent } from './survey/survey.component';
+import { CreateDiscountComponent } from './create-discount/create-discount.component';
+import { DiscountDetailComponent } from './discount-detail/discount-detail.component';
+import { AdBuyComponent } from './ad-buy/ad-buy.component';
+import { RegisterComponent } from './register/register.component';
 
 
 const routes: Routes = [
@@ -36,13 +40,29 @@ const routes: Routes = [
     component: AdminMenuComponent
   },
   {
-    path: 'admin-menu/user-list',
-    component: UserListComponent
-  },
-  {
     path: 'admin-menu/report-list',
     component: ReportListComponent
-  }
+  },
+  {
+    path: 'survey',
+    component: SurveyComponent
+  },
+  {
+    path: 'create-discount',
+    component: CreateDiscountComponent
+  },
+  {
+    path: 'discount-detail',
+    component: DiscountDetailComponent
+  },
+  {
+    path: 'ad-buy',
+    component: AdBuyComponent
+  },
+  {
+    path: 'register',
+    component: RegisterComponent
+  },
 ];
 
 @NgModule({

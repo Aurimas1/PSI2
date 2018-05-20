@@ -2,8 +2,12 @@
 <button mat-raised-button disabled class="centras" [routerLink]="['./report-list']">Pranešto turinio sąrašas</button>
 <div class="empty"></div>
 <table>
-  <tr *ngFor="let element of fakeData" (click)="openReportDialog(element)">
-    <td>{{element.date}}</td>
-    <td>{{element.user}}</td>
+  <tr *ngFor="let element of reportList$ | async" (click)="openReportDialog(element)">
+    <td>{{element.Date.toDate() | date:'y/M/d'}}</td>
+    <td>{{element.UserName}}</td>
   </tr>
 </table>
+
+
+<!-- #Delete -->
+<button (click)="onFakeClick()">FAKE</button>

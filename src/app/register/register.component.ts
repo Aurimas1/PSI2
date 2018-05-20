@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormControl } from '@angular/forms';
 import { MyErrorStateMatcher } from '../validators/MyErrorStateMatcher';
-import { AuthService } from './auth.service';
-
+import { AuthService } from '../login/auth.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
 })
-export class LoginComponent implements OnInit {
+export class RegisterComponent implements OnInit {
 
   username = new FormControl('', [
     Validators.required
@@ -19,6 +18,11 @@ export class LoginComponent implements OnInit {
     Validators.required
   ]);
 
+  name = new FormControl('', [
+    Validators.required
+  ]);
+
+
   matcher = new MyErrorStateMatcher();
 
   constructor(public auth: AuthService) {
@@ -27,8 +31,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  login() {
-    this.auth.login(this.username.value, this.password.value);
+  register() {
+    this.auth.register(this.username.value, this.password.value, this.name.value);
   }
-
 }

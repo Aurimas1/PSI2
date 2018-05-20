@@ -1,3 +1,9 @@
-<p>
-  Vartotojo vardas: {{auth.username}}
-</p>
+<div class="empty"></div>
+<button mat-raised-button color="primary">Vardas Pavardė</button>
+<div class="empty"></div>
+<div class="img-container">
+  <img [src]="foto">
+  <button class="img-btn"><label for="inputId">Pridėti profilio nuotrauką</label></button>
+</div>
+
+<input id="inputId" type="file" style="position: fixed; top: -100em" accept=".jpg, .png" (change)="upload($event.target.files)">

@@ -26,8 +26,10 @@
     "@firebase/app": "^0.2.0",
     "angularfire2": "^5.0.0-rc.6.0",
     "bootstrap-grid-only": "^1.0.0",
+    "chart.js": "^2.7.2",
     "core-js": "^2.4.1",
     "firebase": "^4.13.1",
+    "ng2-charts": "^1.6.0",
     "ng2-toastr": "^4.1.2",
     "rxjs": "^5.5.2",
     "zone.js": "^0.8.14"

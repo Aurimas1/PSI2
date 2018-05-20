@@ -1,0 +1,63 @@
+<div class="row empty"></div>
+<div class="row">
+  <div class="col-xs-4 com-sm-4 com-md-4 col-lg-4">
+    <button mat-raised-button>Kurie draugai atvyko?</button>
+  </div>
+  <div class="col-xs-4 com-sm-4 com-md-4 col-lg-4">
+    <div *ngFor="let friend of friends">
+      <mat-checkbox>{{friend.name}}</mat-checkbox>
+    </div>
+  </div>
+  <div class="col-xs-4 com-sm-4 com-md-4 col-lg-4">
+    <mat-checkbox><input placeholder="Įrašyk draugo vardą ir pavardę"></mat-checkbox>
+  </div>
+</div>
+
+
+<div class="row empty"></div>
+<div class="row">
+  <div class="col-xs-4 com-sm-4 com-md-4 col-lg-4">
+    <button mat-raised-button>Ar vieta tinka šiai veiklai?</button>
+  </div>
+  <div class="col-xs-4 com-sm-4 com-md-4 col-lg-4">
+    <mat-radio-group class="app-radio-group" [(ngModel)]="someBool">
+      <mat-radio-button [value]="true">
+        Taip
+      </mat-radio-button>
+      <mat-radio-button [value]="false">
+        Ne
+      </mat-radio-button>
+    </mat-radio-group>
+  </div>
+  <div class="col-xs-4 com-sm-4 com-md-4 col-lg-4">
+    <textarea placeholder="Vieta komentarui"></textarea>
+  </div>
+</div>
+
+<div class="row empty"></div>
+<div class="row">
+  <div class="col-xs-4 com-sm-4 com-md-4 col-lg-4">
+    <button mat-raised-button>Ar patiko veikla?</button>
+  </div>
+  <div class="col-xs-4 com-sm-4 com-md-4 col-lg-4">
+    <mat-radio-group class="app-radio-group" [(ngModel)]="something">
+      <mat-radio-button [value]="0">
+        Taip
+      </mat-radio-button>
+      <mat-radio-button [value]="1">
+        Vidutiniškai
+      </mat-radio-button>
+      <mat-radio-button [value]="2">
+        Ne
+      </mat-radio-button>
+    </mat-radio-group>
+  </div>
+</div>
+
+<div class="row empty"></div>
+<div class="row">
+  <div class="col-xs-4 com-sm-4 com-md-4 col-lg-4"></div>
+  <div class="col-xs-4 com-sm-4 com-md-4 col-lg-4">
+    <button mat-raised-button color="primary">Baigti apklausą</button>
+  </div>
+</div>

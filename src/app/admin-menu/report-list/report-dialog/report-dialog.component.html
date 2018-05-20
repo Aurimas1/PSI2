@@ -5,23 +5,23 @@
 </div>
 <div class="row">
   <div class="col-lg-6 col-md-6" style="display: inline-block;">
-    <button >{{data.user}}</button>
+    <button >{{data.UserName}}</button>
   </div>
   <div class="col-lg-6 col-md-6" style="display: inline-block;">
-    <p>{{data.date}}</p>
+    <p>{{data.Date.toDate() | date:'y/M/d'}}</p>
   </div>
 </div>
 <div class="row">
   <p>
-    Netinkama nuotrauka
+    {{data.Comment}}
   </p>
 </div>
 <div class="row">
-  <img src="http://www.robandnick.com/files/62wk_img_1.jpg" style="max-width:500px;">
+  <img [src]="data.Foto" style="max-width:500px;">
 </div>  
 <div class="row centras" style="text-align: center;">
-  <button mat-raised-button>Klaidingas pranešimas</button>
-  <button mat-raised-button color="warn">Slėpti</button>
+  <button mat-raised-button (click)="removeReport()">Klaidingas pranešimas</button>
+  <button mat-raised-button color="warn" (click)="removeReport()">Slėpti</button>
 </div>
 <div class="empty"></div>
 <div> 

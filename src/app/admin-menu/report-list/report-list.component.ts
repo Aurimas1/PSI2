@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { ReportDialogComponent } from './report-dialog/report-dialog.component';
+import { ReportListService } from './report-list.service';
+import { Observable } from 'rxjs/Observable';
+import { Report } from '../../models/report';
+import { Timestamp } from '@firebase/firestore-types';
 
 @Component({
   selector: 'app-report-list',
@@ -9,18 +13,22 @@ import { ReportDialogComponent } from './report-dialog/report-dialog.component';
 })
 export class ReportListComponent implements OnInit {
 
-  fakeData = [
-    {date: '2018-05-02', user: 'aurimas'},
-    {date: '2018-05-03', user: 'audrius'}
-  ];
+  reportList$: Observable<Report[]>;
 
-  constructor(private dialog: MatDialog) { }
+  constructor(private dialog: MatDialog, private service: ReportListService) {
+    this.reportList$ = service.getList();
+  }
 
   ngOnInit() {
   }
 
-  openReportDialog(element: {date: string, user: string}): void {
+  openReportDialog(element: Report): void {
     this.dialog.open(ReportDialogComponent, {data: element});
+  }
+
+  // #Delete
+  onFakeClick() {
+    this.service.addCopies();
   }
 
 }

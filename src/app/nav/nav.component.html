@@ -12,8 +12,66 @@
     </li>
   </ng-container>
   <ng-container [ngSwitch]="auth.role">
-    <li>
-      <a *ngSwitchCase="'admin'" [routerLink]="['/admin-menu']">Administratoriaus meniu</a>
-    </li>
+    <ng-container *ngSwitchCase="'admin'">
+      <li>
+        <a [routerLink]="['/admin-menu']">Administratoriaus meniu</a>
+      </li>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'user'">
+      <li>
+        <a [matMenuTriggerFor]="menu">Apklausos</a>
+      </li>
+      <li>
+        <a [matMenuTriggerFor]="stats">Jūsų statistika</a>
+      </li>
+      <li>
+        <a [matMenuTriggerFor]="adsa">Bendra statistika</a>
+      </li>
+      <li>
+        <a (click)="onAddActivityClick()">Pridėti veiklą</a>
+      </li>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'parthner'">
+      <li>
+        <a [routerLink]="['/create-discount']">Sukurti nuolaidą</a>
+      </li>
+      <li>
+        <a [matMenuTriggerFor]="discount">Peržiūrėti taikomas nuolaidas</a>
+      </li>
+      <li>
+        <a [routerLink]="['/ad-buy']">Pirkti reklamą</a>
+      </li>
+    </ng-container>
+
   </ng-container>
 </ul>
+
+
+<mat-menu #menu="matMenu">
+  <button *ngFor="let survey of surveyList$ | async" mat-menu-item [routerLink]="['/survey']">
+    <span>{{survey.date.toDate() | date:'y/M/d'}} veiklos apklausa</span>
+  </button>
+</mat-menu>
+
+<mat-menu #stats="matMenu" style="width: 250px; height: 150px;">
+  <p>Dalyvavimas veikloje</p>
+  <div style="display: block; width: 250px; height: 150px;">
+    <canvas baseChart
+                [data]="doughnutChartData"
+                [labels]="doughnutChartLabels"
+                [chartType]="doughnutChartType"
+                (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)"></canvas>
+  </div>
+</mat-menu>
+
+<mat-menu #adsa="matMenu">
+</mat-menu>
+
+<mat-menu #discount="matMenu">
+  <button mat-menu-item [routerLink]="['/discount-detail']">
+    <span>Nuolaida</span>
+  </button>
+</mat-menu>
