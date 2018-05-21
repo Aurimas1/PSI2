@@ -37,6 +37,7 @@ import { AdBuyComponent } from './ad-buy/ad-buy.component';
 import { ReportListService } from './admin-menu/report-list/report-list.service';
 import { RegisterComponent } from './register/register.component';
 import { SurveyService } from './survey/survey.service';
+import { StatsService } from './nav/stats.service';
 
 
 @NgModule({
@@ -73,7 +74,7 @@ import { SurveyService } from './survey/survey.service';
     AngularFireStorageModule
   ],
   bootstrap: [AppComponent],
-  providers: [ActivityService, AuthService, ReportListService, SurveyService],
+  providers: [ActivityService, AuthService, ReportListService, SurveyService, StatsService],
   entryComponents: [ReportDialogComponent, AddActivityDialogComponent]
 })
 export class AppModule { }

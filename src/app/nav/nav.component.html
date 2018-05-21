@@ -56,15 +56,20 @@
 </mat-menu>
 
 <mat-menu #stats="matMenu" style="width: 250px; height: 150px;">
-  <p>Dalyvavimas veikloje</p>
-  <div style="display: block; width: 250px; height: 150px;">
-    <canvas baseChart
-                [data]="doughnutChartData"
-                [labels]="doughnutChartLabels"
-                [chartType]="doughnutChartType"
-                (chartHover)="chartHovered($event)"
-                (chartClick)="chartClicked($event)"></canvas>
-  </div>
+  <ng-container *ngIf="doughnutChartData">
+    <p>Dalyvavimas veikloje</p>
+    <div style="display: block; width: 250px; height: 150px;">
+      <canvas baseChart
+                  [data]="doughnutChartData"
+                  [labels]="doughnutChartLabels"
+                  [chartType]="doughnutChartType"
+                  (chartHover)="chartHovered($event)"
+                  (chartClick)="chartClicked($event)"></canvas>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="!doughnutChartData">
+      <p>Jūs dar nedalyvavote jokioje veikloje</p>
+  </ng-container>
 </mat-menu>
 
 <mat-menu #adsa="matMenu">

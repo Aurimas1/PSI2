@@ -6,6 +6,7 @@ import { SurveyService } from '../survey/survey.service';
 import { Observable } from 'rxjs/Observable';
 import { Survey } from '../models/survey';
 import 'rxjs/add/operator/map';
+import { StatsService } from './stats.service';
 
 @Component({
   selector: 'app-nav',
@@ -15,16 +16,17 @@ import 'rxjs/add/operator/map';
 export class NavComponent implements OnInit {
 
   public doughnutChartLabels = ['Dalyvavote'];
-  public doughnutChartData = [75, 100 - 75];
+  public doughnutChartData: number[] = undefined;
   public doughnutChartType = 'doughnut';
 
   surveyList$: Observable<Survey[]>;
 
-  constructor(public auth: AuthService, private dialog: MatDialog, surveyService: SurveyService) {
+  constructor(public auth: AuthService, private dialog: MatDialog, surveyService: SurveyService, stats: StatsService) {
     const timmer = setInterval(
       () => {
         if (auth.isLogedin()) {
           this.surveyList$ = surveyService.getList().map(x => x.filter(y => y.taken === false));
+          stats.getStats().subscribe(result => this.doughnutChartData = result ? [result, 100 - result] : undefined);
           clearInterval(timmer);
         }
       }, 100
