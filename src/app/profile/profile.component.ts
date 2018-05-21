@@ -11,7 +11,7 @@ import { ToastsManager } from 'ng2-toastr';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
-export class ProfileComponent implements OnInit {
+export class ProfileComponent {
 
   readonly defaultFoto = 'assets/profile.jpg';
 
@@ -19,9 +19,6 @@ export class ProfileComponent implements OnInit {
 
   get foto(): string {
     return this.auth.foto ? this.auth.foto : this.defaultFoto;
-  }
-
-  ngOnInit() {
   }
 
   upload(files: FileList): void {

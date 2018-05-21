@@ -13,7 +13,7 @@ import { StatsService } from './stats.service';
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.css']
 })
-export class NavComponent implements OnInit {
+export class NavComponent {
 
   public doughnutChartLabels = ['Dalyvavote'];
   public doughnutChartData: number[] = undefined;
@@ -31,20 +31,6 @@ export class NavComponent implements OnInit {
         }
       }, 100
     );
-  }
-
-  // events
-  public chartClicked(e: any): void {
-    console.log(e);
-  }
-
-  public chartHovered(e: any): void {
-    console.log(e);
-  }
-
-
-
-  ngOnInit() {
   }
 
   onAddActivityClick(): void {
