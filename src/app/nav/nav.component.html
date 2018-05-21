@@ -50,7 +50,7 @@
 
 
 <mat-menu #menu="matMenu">
-  <button *ngFor="let survey of surveyList$ | async" mat-menu-item [routerLink]="['/survey']">
+  <button *ngFor="let survey of surveyList$ | async" mat-menu-item [routerLink]="['/survey', survey.fireId]">
     <span>{{survey.date.toDate() | date:'y/M/d'}} veiklos apklausa</span>
   </button>
 </mat-menu>

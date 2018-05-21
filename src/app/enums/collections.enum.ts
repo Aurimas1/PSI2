@@ -1,4 +1,5 @@
 export enum Collections {
     Reports = 'Report',
-    Survey = 'Survey'
+    Survey = 'Survey',
+    SurveyResult = 'SurveyResult',
 }

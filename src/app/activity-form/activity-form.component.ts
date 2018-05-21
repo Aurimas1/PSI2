@@ -18,7 +18,7 @@ export class ActivityFormComponent implements OnInit {
 
   matcher = new MyErrorStateMatcher();
 
-  constructor(public toastr: ToastsManager, private router: Router) {
+  constructor(private toastr: ToastsManager, private router: Router) {
  }
 
   ngOnInit() {

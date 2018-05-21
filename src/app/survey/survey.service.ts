@@ -4,6 +4,7 @@ import { AuthService } from '../login/auth.service';
 import { Observable } from 'rxjs/Observable';
 import { Survey } from '../models/survey';
 import { Collections } from '../enums/collections.enum';
+import { SurveyResult } from '../models/survey-result';
 
 @Injectable()
 export class SurveyService {
@@ -11,6 +12,28 @@ export class SurveyService {
   constructor(private afs: AngularFirestore, private auth: AuthService) { }
 
   getList(): Observable<Survey[]> {
-    return this.afs.collection<Survey>(Collections.Survey, x => x.where('id', '==', this.auth.uid)).valueChanges();
+    return this.afs.collection<Survey>(Collections.Survey, x => x.where('id', '==', this.auth.uid)).snapshotChanges().map(actions => {
+      return actions.map(x => {
+        const element = x.payload.doc.data() as Survey;
+        element.fireId = x.payload.doc.id;
+        return element;
+      });
+    });
+  }
+
+  getById(id: string): Observable<Survey> {
+    return this.afs.doc<Survey>(`${Collections.Survey}/${id}`).valueChanges();
+  }
+
+  saveSurvey(id: string, friends: {name: string, been: boolean}[], fitForActivity: boolean, enjoyActivity: number, comment: string): Promise<void> {
+    this.afs.doc<Survey>(`${Collections.Survey}/${id}`).update({taken: true});
+    return this.afs.doc<SurveyResult>(`${Collections.SurveyResult}/${id}`).set({
+      id: this.auth.uid,
+      enjoyActivity: enjoyActivity,
+      fitForActivity: fitForActivity,
+      friends: friends,
+      comment: comment
+    });
+
   }
 }

@@ -51,7 +51,8 @@ export class AuthService {
   }
 
   logout(): void {
-    this.auth.auth.signOut();
+    this.auth.auth.signOut()
+      .then( () => this.router.navigate(['']) );
   }
 }
 

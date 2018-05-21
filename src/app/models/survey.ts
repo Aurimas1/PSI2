@@ -1,7 +1,8 @@
 import { Timestamp } from '@firebase/firestore-types';
 
 export interface Survey {
-    id?: string;
+    fireId?: string;
+    id: string;
     taken: boolean;
     date: Timestamp;
     friends: string[];

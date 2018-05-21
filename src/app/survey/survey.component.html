@@ -5,7 +5,7 @@
   </div>
   <div class="col-xs-4 com-sm-4 com-md-4 col-lg-4">
     <div *ngFor="let friend of friends">
-      <mat-checkbox>{{friend.name}}</mat-checkbox>
+      <mat-checkbox [(ngModel)]="friend.been">{{friend.name}}</mat-checkbox>
     </div>
   </div>
   <div class="col-xs-4 com-sm-4 com-md-4 col-lg-4">
@@ -20,7 +20,7 @@
     <button mat-raised-button>Ar vieta tinka šiai veiklai?</button>
   </div>
   <div class="col-xs-4 com-sm-4 com-md-4 col-lg-4">
-    <mat-radio-group class="app-radio-group" [(ngModel)]="someBool">
+    <mat-radio-group class="app-radio-group" [(ngModel)]="fitForActivity">
       <mat-radio-button [value]="true">
         Taip
       </mat-radio-button>
@@ -40,7 +40,7 @@
     <button mat-raised-button>Ar patiko veikla?</button>
   </div>
   <div class="col-xs-4 com-sm-4 com-md-4 col-lg-4">
-    <mat-radio-group class="app-radio-group" [(ngModel)]="something">
+    <mat-radio-group class="app-radio-group" [(ngModel)]="enjoyActivity">
       <mat-radio-button [value]="0">
         Taip
       </mat-radio-button>
@@ -58,6 +58,6 @@
 <div class="row">
   <div class="col-xs-4 com-sm-4 com-md-4 col-lg-4"></div>
   <div class="col-xs-4 com-sm-4 com-md-4 col-lg-4">
-    <button mat-raised-button color="primary">Baigti apklausą</button>
+    <button mat-raised-button color="primary" (click)="endSurvey()">Baigti apklausą</button>
   </div>
 </div>

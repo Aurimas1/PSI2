@@ -44,7 +44,7 @@ const routes: Routes = [
     component: ReportListComponent
   },
   {
-    path: 'survey',
+    path: 'survey/:id',
     component: SurveyComponent
   },
   {
