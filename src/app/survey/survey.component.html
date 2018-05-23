@@ -9,7 +9,7 @@
     </div>
   </div>
   <div class="col-xs-4 com-sm-4 com-md-4 col-lg-4">
-    <mat-checkbox><input placeholder="Įrašyk draugo vardą ir pavardę"></mat-checkbox>
+    <input placeholder="Įrašyk draugo vardą ir pavardę" (keyup.enter)="addFriend()" [(ngModel)]="friend">
   </div>
 </div>
 

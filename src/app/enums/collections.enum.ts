@@ -3,4 +3,5 @@ export enum Collections {
     Survey = 'Survey',
     SurveyResult = 'SurveyResult',
     Activity = 'Activity',
+    Role = 'Role',
 }

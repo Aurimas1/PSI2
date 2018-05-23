@@ -22,7 +22,11 @@ export class SurveyService {
   }
 
   getById(id: string): Observable<Survey> {
-    return this.afs.doc<Survey>(`${Collections.Survey}/${id}`).valueChanges();
+    return this.afs.doc<Survey>(`${Collections.Survey}/${id}`).snapshotChanges().map(result => {
+      const element = result.payload.data() as Survey;
+      element.fireId = result.payload.id;
+      return element;
+    });
   }
 
   saveSurvey(id: string, friends: {name: string, been: boolean}[], fitForActivity: boolean, enjoyActivity: number, comment: string): Promise<void> {
@@ -34,6 +38,9 @@ export class SurveyService {
       friends: friends,
       comment: comment
     });
+  }
 
+  addFriend(survey: Survey, friend: string): Promise<void> {
+    return this.afs.doc<Survey>(`${Collections.Survey}/${survey.fireId}`).update({friends: survey.friends.concat(friend)});
   }
 }

@@ -16,12 +16,15 @@ export class SurveyComponent implements OnInit {
   fitForActivity: boolean;
   enjoyActivity: number;
   friends: {name: string, been: boolean}[] = [];
+  friend: string;
+  survey: Survey;
 
   private id: string;
 
   constructor(route: ActivatedRoute, private service: SurveyService, private toastr: ToastsManager, private router: Router) {
     route.params.subscribe( params => {
       service.getById(params.id).subscribe(result => {
+        this.survey = result;
         this.friends = result.friends.map(x => ({name: x, been: false}));
       });
       this.id = params.id;
@@ -29,6 +32,13 @@ export class SurveyComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  addFriend(): void {
+    if (this.friend === '')
+      return;
+    this.service.addFriend(this.survey, this.friend);
+    this.friend = '';
   }
 
   endSurvey(): void {

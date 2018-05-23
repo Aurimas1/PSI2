@@ -20,7 +20,13 @@ export class AuthService {
   }
 
   get role(): string {
-    return this.user ? 'user' : undefined;
+    if (!this.user)
+      return undefined;
+    if (this.user.uid === 'eApw1Eg0Imh6XyBzBb5r2AvZj8W2')
+      return 'admin';
+    if (this.user.uid === 'SH5jNrXBg2OUJLSFo9Bsj6dGHbP2')
+      return 'parthner';
+    return 'user';
   }
 
   get foto(): string {
