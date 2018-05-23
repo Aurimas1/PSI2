@@ -38,7 +38,7 @@ export class SurveyComponent implements OnInit {
 
   private showSuccess() {
     this.toastr.success('Jūsų apklausa sėkmingai užpildyta!');
-    this.router.navigateByUrl('/');
+    this.router.navigate(['']);
   }
 
 }

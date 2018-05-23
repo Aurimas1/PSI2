@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { ActivityFormComponent } from './activity-form/activity-form.component';
 import { ActivityListComponent } from './activity-list/activity-list.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -26,10 +25,6 @@ const routes: Routes = [
   {
     path: 'profile',
     component: ProfileComponent
-  },
-  {
-    path: 'add-activity',
-    component: ActivityFormComponent
   },
   {
     path: 'activity-list',

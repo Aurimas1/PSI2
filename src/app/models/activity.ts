@@ -1,5 +1,10 @@
+import { Timestamp } from '@firebase/firestore-types';
+
 export class Activity {
-    Name: string;
-    Description: string;
-    PersonCount: number;
+    fireId?: string;
+    users: string[];
+    name: string;
+    description: string;
+    start: Timestamp;
+    end: Timestamp;
 }

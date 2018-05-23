@@ -4,38 +4,38 @@
     <div class="col-xs-6 com-sm-6 com-md-6 col-lg-6">
       <div>
         <mat-form-field>
-          <input matInput placeholder="Veiklos pavadinimas">
+          <input matInput placeholder="Veiklos pavadinimas" [(ngModel)]="name">
         </mat-form-field>
       </div><div>
         <mat-form-field>
-          <input matInput placeholder="Aprašymas">
+          <input matInput placeholder="Aprašymas" [(ngModel)]="description">
         </mat-form-field>
       </div><div>
         <mat-form-field>
-          <input matInput placeholder="Vieta">
+          <input matInput placeholder="Vieta" [(ngModel)]="place">
         </mat-form-field>
       </div>  
     </div>
     <div class="col-xs-6 com-sm-6 com-md-6 col-lg-6">
       <div>
       Pradžia: <mat-form-field>
-        <input matInput [matDatepicker]="picker">
+        <input matInput [matDatepicker]="picker" [(ngModel)]="start">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
       </div><div>
       Pabaiga: <mat-form-field>
-        <input matInput [matDatepicker]="picker2">
+        <input matInput [matDatepicker]="picker2" [(ngModel)]="end">
         <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
         <mat-datepicker #picker2></mat-datepicker>
       </mat-form-field>
       </div><div>
       Draugai:<br>
-      <textarea placeholder="Įrašykite vardą ir pavardę"></textarea>
+      <textarea placeholder="Įrašykite vardą ir pavardę" [(ngModel)]="friends"></textarea>
       </div>
     </div>
   </div>
   <div class="row">
-    <button mat-raised-button color="primary" class="center-activity-button">Baigti apklausą</button>
+    <button mat-raised-button color="primary" class="center-activity-button" (click)="createActivity()">Baigti apklausą</button>
   </div>
 </div>

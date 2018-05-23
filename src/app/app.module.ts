@@ -16,7 +16,6 @@ import { AppComponent } from './app.component';
 
 import { environment } from '../environments/environment';
 import { SuperModule } from './super.module';
-import { ActivityFormComponent } from './activity-form/activity-form.component';
 import { HomeComponent } from './home/home.component';
 import { ActivityListComponent } from './activity-list/activity-list.component';
 import { ActivityService } from './activity-list/activity.service';
@@ -43,7 +42,6 @@ import { StatsService } from './nav/stats.service';
 @NgModule({
   declarations: [
     AppComponent,
-    ActivityFormComponent,
     HomeComponent,
     ActivityListComponent,
     NavComponent,
