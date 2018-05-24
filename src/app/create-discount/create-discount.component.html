@@ -1,30 +1,29 @@
 <div class="row">
     <div class="col-xs-6 com-sm-6 com-md-6 col-lg-6">
       <mat-form-field>
-        <input matInput placeholder="Įmonės pavadinimas">
+        <input matInput placeholder="Įmonės pavadinimas" [(ngModel)]="discount.companyName">
       </mat-form-field>
     </div>
     <div class="col-xs-6 com-sm-6 com-md-6 col-lg-6">
       <p><u>Nuolaidos taikymo sritis:</u></p>
-      <mat-checkbox>Visoms paslaugoms/prekėms</mat-checkbox><br>
-      <mat-checkbox></mat-checkbox>
-      <textarea placeholder="Vieta komentarui"></textarea>
+      <mat-checkbox [(ngModel)]="discount.toAll">Visoms paslaugoms/prekėms</mat-checkbox><br>
+      <textarea placeholder="Vieta komentarui" [(ngModel)]="discount.comment"></textarea>
     </div>
     <div class="row">
       <div class="col-xs-6 com-sm-6 com-md-6 col-lg-6">
         <mat-form-field>
-          <input matInput placeholder="Nuolaidos dydis procentais">
+          <input matInput placeholder="Nuolaidos dydis procentais" [(ngModel)]="discount.percentage">
         </mat-form-field>
       </div>
       <div class="col-xs-6 com-sm-6 com-md-6 col-lg-6">
         <p><u>Nuolaidos trukmė:</u></p>
         Pradžia: <mat-form-field>
-            <input matInput [matDatepicker]="picker">
+            <input matInput [matDatepicker]="picker" [(ngModel)]="discount.start">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
           </mat-form-field><br>
           Pabaiga: <mat-form-field>
-            <input matInput [matDatepicker]="picker2">
+            <input matInput [matDatepicker]="picker2" [(ngModel)]="discount.end">
             <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
             <mat-datepicker #picker2></mat-datepicker>
           </mat-form-field>
@@ -32,11 +31,11 @@
     </div>
     <div class="row">
       <mat-form-field>
-        <input matInput placeholder="Nuolaidos kodas">
+        <input matInput placeholder="Nuolaidos kodas" [(ngModel)]="discount.code">
       </mat-form-field>
     </div>
     <div class="row">
-      <button mat-raised-button color="primary" class="center-discount-button">Patvirtinti</button>
+      <button mat-raised-button color="primary" class="center-discount-button" (click)="createDiscount()">Patvirtinti</button>
     </div>
 </div>
 

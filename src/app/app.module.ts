@@ -38,6 +38,7 @@ import { RegisterComponent } from './register/register.component';
 import { SurveyService } from './survey/survey.service';
 import { StatsService } from './nav/stats.service';
 import { ActivityComponent } from './activity/activity.component';
+import { DiscountService } from './create-discount/discount.service';
 
 
 @NgModule({
@@ -74,7 +75,7 @@ import { ActivityComponent } from './activity/activity.component';
     AngularFireStorageModule
   ],
   bootstrap: [AppComponent],
-  providers: [ActivityService, AuthService, ReportListService, SurveyService, StatsService],
+  providers: [ActivityService, AuthService, ReportListService, SurveyService, StatsService, DiscountService],
   entryComponents: [ReportDialogComponent, AddActivityDialogComponent]
 })
 export class AppModule { }
