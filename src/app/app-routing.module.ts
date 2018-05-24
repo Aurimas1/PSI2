@@ -11,6 +11,7 @@ import { CreateDiscountComponent } from './create-discount/create-discount.compo
 import { DiscountDetailComponent } from './discount-detail/discount-detail.component';
 import { AdBuyComponent } from './ad-buy/ad-buy.component';
 import { RegisterComponent } from './register/register.component';
+import { ActivityComponent } from './activity/activity.component';
 
 
 const routes: Routes = [
@@ -41,6 +42,10 @@ const routes: Routes = [
   {
     path: 'survey/:id',
     component: SurveyComponent
+  },
+  {
+    path: 'activity/:id',
+    component: ActivityComponent
   },
   {
     path: 'create-discount',

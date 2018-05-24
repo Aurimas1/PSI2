@@ -37,6 +37,7 @@ import { ReportListService } from './admin-menu/report-list/report-list.service'
 import { RegisterComponent } from './register/register.component';
 import { SurveyService } from './survey/survey.service';
 import { StatsService } from './nav/stats.service';
+import { ActivityComponent } from './activity/activity.component';
 
 
 @NgModule({
@@ -56,6 +57,7 @@ import { StatsService } from './nav/stats.service';
     DiscountDetailComponent,
     AdBuyComponent,
     RegisterComponent,
+    ActivityComponent,
   ],
   imports: [
     BrowserModule,
