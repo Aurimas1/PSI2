@@ -26,9 +26,6 @@
         <a [matMenuTriggerFor]="stats">Jūsų statistika</a>
       </li>
       <li>
-        <a [matMenuTriggerFor]="adsa">Bendra statistika</a>
-      </li>
-      <li>
         <a (click)="onAddActivityClick()">Pridėti veiklą</a>
       </li>
     </ng-container>
@@ -68,9 +65,6 @@
   <ng-container *ngIf="!doughnutChartData">
       <p>Jūs dar nedalyvavote jokioje veikloje</p>
   </ng-container>
-</mat-menu>
-
-<mat-menu #adsa="matMenu">
 </mat-menu>
 
 <mat-menu #discount="matMenu">

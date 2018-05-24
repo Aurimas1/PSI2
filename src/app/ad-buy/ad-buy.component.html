@@ -15,12 +15,12 @@
     </mat-radio-group>
   </div>
   <div class="col-xs-6 com-sm-6 com-md-6 col-lg-6">
-    <p>Šiuo metu {{orderCount}} partnerių pretenduoja į TOP5 pozicijas. Su kiekvienu veiklos sukūrimu
+    <p>Šiuo metu {{count}} partnerių pretenduoja į TOP5 pozicijas. Su kiekvienu veiklos sukūrimu
       Jūsų galimybė patekti į TOP5 yra lygi {{probability}}%.
     </p>
   </div>
 </div>
 
 <div class="row empty">
-  <button>Sumokėti</button>
+  <button (click)="buyAd()">Sumokėti</button>
 </div>
