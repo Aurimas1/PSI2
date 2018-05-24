@@ -74,7 +74,7 @@
 </mat-menu>
 
 <mat-menu #discount="matMenu">
-  <button mat-menu-item [routerLink]="['/discount-detail']">
-    <span>Nuolaida</span>
+  <button *ngFor="let discount of discounts$ | async" mat-menu-item [routerLink]="['/discount-detail', discount.fireId]">
+    <span>{{discount.code}}</span>
   </button>
 </mat-menu>

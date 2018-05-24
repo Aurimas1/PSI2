@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { DiscountService } from '../create-discount/discount.service';
+import { Discount } from '../models/discount';
 
 @Component({
   selector: 'app-discount-detail',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DiscountDetailComponent implements OnInit {
 
-  constructor() { }
+  discount: Discount;
+
+  constructor(route: ActivatedRoute, private service: DiscountService, private router: Router) {
+    route.params.subscribe(params => service.getById(params.id).subscribe(x => this.discount = x));
+  }
 
   ngOnInit() {
+  }
+
+  deleteDiscount() {
+    this.service.delete(this.discount).then(() => this.router.navigate(['']));
   }
 
 }

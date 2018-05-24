@@ -52,7 +52,7 @@ const routes: Routes = [
     component: CreateDiscountComponent
   },
   {
-    path: 'discount-detail',
+    path: 'discount-detail/:id',
     component: DiscountDetailComponent
   },
   {

@@ -7,6 +7,8 @@ import { Observable } from 'rxjs/Observable';
 import { Survey } from '../models/survey';
 import 'rxjs/add/operator/map';
 import { StatsService } from './stats.service';
+import { DiscountService } from '../create-discount/discount.service';
+import { Discount } from '../models/discount';
 
 @Component({
   selector: 'app-nav',
@@ -20,8 +22,9 @@ export class NavComponent {
   public doughnutChartType = 'doughnut';
 
   surveyList$: Observable<Survey[]>;
+  discounts$: Observable<Discount[]>;
 
-  constructor(public auth: AuthService, private dialog: MatDialog, surveyService: SurveyService, stats: StatsService) {
+  constructor(public auth: AuthService, private dialog: MatDialog, surveyService: SurveyService, stats: StatsService, discount: DiscountService) {
     const timmer = setInterval(
       () => {
         if (auth.isLogedin()) {
@@ -31,6 +34,7 @@ export class NavComponent {
         }
       }, 100
     );
+    this.discounts$ = discount.getList();
   }
 
   onAddActivityClick(): void {
