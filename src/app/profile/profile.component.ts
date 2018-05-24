@@ -15,7 +15,7 @@ export class ProfileComponent {
 
   readonly defaultFoto = 'assets/profile.jpg';
 
-  constructor(private auth: AuthService, private storage: AngularFireStorage, private toast: ToastsManager) {}
+  constructor(public auth: AuthService, private storage: AngularFireStorage, private toast: ToastsManager) {}
 
   get foto(): string {
     return this.auth.foto ? this.auth.foto : this.defaultFoto;
