@@ -17,9 +17,9 @@ import { Discount } from '../models/discount';
 })
 export class NavComponent {
 
-  public doughnutChartLabels = ['Dalyvavote'];
-  public doughnutChartData: number[] = undefined;
-  public doughnutChartType = 'doughnut';
+  doughnutChartLabels = ['Dalyvavote'];
+  doughnutChartData: number[] = undefined;
+  doughnutChartType = 'doughnut';
 
   surveyList$: Observable<Survey[]>;
   discounts$: Observable<Discount[]>;

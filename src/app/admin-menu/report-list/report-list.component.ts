@@ -25,10 +25,4 @@ export class ReportListComponent implements OnInit {
   openReportDialog(element: Report): void {
     this.dialog.open(ReportDialogComponent, {data: element});
   }
-
-  // #Delete
-  onFakeClick() {
-    this.service.addCopies();
-  }
-
 }

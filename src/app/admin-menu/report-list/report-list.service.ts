@@ -19,16 +19,6 @@ export class ReportListService {
     });
   }
 
-  // #Delete
-  addCopies(): void {
-    const something = this.getList().subscribe(x => {
-      for (const element of x) {
-        this.afs.collection<Report>(Collections.Reports).add(Object.assign({}, element));
-      }
-      something.unsubscribe();
-    });
-  }
-
   removeElement(element: Report) {
     if (element.Id) {
       this.afs.doc<Report>(`${Collections.Reports}/${element.Id}`).delete();
