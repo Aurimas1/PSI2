@@ -33,7 +33,7 @@ import { AddActivityDialogComponent } from './nav/add-activity-dialog/add-activi
 import { CreateDiscountComponent } from './create-discount/create-discount.component';
 import { DiscountDetailComponent } from './discount-detail/discount-detail.component';
 import { AdBuyComponent } from './ad-buy/ad-buy.component';
-import { ReportListService } from './admin-menu/report-list/report-list.service';
+import { ReportService } from './admin-menu/report-list/report-list.service';
 import { RegisterComponent } from './register/register.component';
 import { SurveyService } from './survey/survey.service';
 import { StatsService } from './nav/stats.service';
@@ -76,7 +76,7 @@ import { AdService } from './ad-buy/ad.service';
     AngularFireStorageModule
   ],
   bootstrap: [AppComponent],
-  providers: [ActivityService, AuthService, ReportListService, SurveyService, StatsService, DiscountService, AdService],
+  providers: [ActivityService, AuthService, ReportService, SurveyService, StatsService, DiscountService, AdService],
   entryComponents: [ReportDialogComponent, AddActivityDialogComponent]
 })
 export class AppModule { }

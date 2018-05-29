@@ -5,7 +5,7 @@ import { Collections } from '../../enums/collections.enum';
 import { Report } from '../../models/report';
 
 @Injectable()
-export class ReportListService {
+export class ReportService {
 
   constructor(private afs: AngularFirestore) { }
 

@@ -2,5 +2,8 @@
     "files.exclude": {
         "**/node_modules": true,
         "**/e2e": true,
+        "**/src/app/**/*.spec.ts": true,
+        "**/src/app/**/*.css": true,
+        "**/src/app/**/*.html": true
     }
 }

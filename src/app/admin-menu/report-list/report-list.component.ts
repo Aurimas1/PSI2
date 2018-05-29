@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { ReportDialogComponent } from './report-dialog/report-dialog.component';
-import { ReportListService } from './report-list.service';
+import { ReportService } from './report-list.service';
 import { Observable } from 'rxjs/Observable';
 import { Report } from '../../models/report';
 import { Timestamp } from '@firebase/firestore-types';
@@ -15,7 +15,7 @@ export class ReportListComponent implements OnInit {
 
   reportList$: Observable<Report[]>;
 
-  constructor(private dialog: MatDialog, private service: ReportListService) {
+  constructor(private dialog: MatDialog, private service: ReportService) {
     this.reportList$ = service.getList();
   }
 
